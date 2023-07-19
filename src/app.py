@@ -100,7 +100,7 @@ def get_user_favorites(user_id):
 
 
 @app.route('/<int:user_id>/favorite/people/<int:people_id>', methods = ['GET'])
-def post_people_to_favorite(user_id, people_id): 
+def add_people_to_favorite(user_id, people_id): 
     favorite = Favorite(user_id = user_id, people_id = people_id)
     db.session.add(favorite)
     db.session.commit()
@@ -111,7 +111,7 @@ def post_people_to_favorite(user_id, people_id):
 
 
 @app.route('/<int:user_id>/favorite/planet/<int:planet_id>', methods = ['GET'])
-def post_planet_to_favorite(user_id, planet_id): 
+def add_planet_to_favorite(user_id, planet_id): 
     favorite = Favorite(user_id = user_id, planet_id = planet_id)
     db.session.add(favorite)
     db.session.commit()
